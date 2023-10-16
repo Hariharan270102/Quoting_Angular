@@ -1,0 +1,46 @@
+/* view-quotes.component.css */
+
+/* Style for the table container */
+.table-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Style for the table */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #121212;
+    color: #fff;
+  }
+  
+  /* Style for table headers */
+  .table th {
+    background-color: #343a40;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  /* Style for table rows */
+  .table tbody tr:nth-child(even) {
+    background-color: #1a1a1a;
+  }
+  
+  /* Style for table cells (td) */
+  .table td {
+    padding: 10px;
+  }
+  
+  /* Style for table cells (td) with currency */
+  .table td.currency {
+    font-weight: bold;
+    color: #f9b234;
+  }
+  
+  /* Style for table hover effect */
+  .table tbody tr:hover {
+    background-color: #343a40;
+  }
+  

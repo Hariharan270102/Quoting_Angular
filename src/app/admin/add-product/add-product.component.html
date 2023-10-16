@@ -1,0 +1,219 @@
+<app-admin-nav></app-admin-nav>
+<!-- <button type="submit" (click)="getLocations()">Locations</button> -->
+<div class="container">
+  <h2>Add Product</h2>
+  <form [formGroup]="addProductFormGroup" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="planId">Plan ID</label>
+      <input
+        type="text"
+        id="planId"
+        class="form-control"
+        formControlName="planId"
+      />
+      <small
+        *ngIf="addProductFormGroup.get('planId')?.hasError('required') && addProductFormGroup.get('planId')?.touched"
+        class="text-danger"
+      >
+        Plan ID is required.
+      </small>
+      <small
+        *ngIf="addProductFormGroup.get('planId')?.hasError('pattern') && addProductFormGroup.get('planId')?.touched"
+        class="text-danger"
+      >
+        Plan ID must contain only uppercase letters, numbers, and special characters.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="planName">Plan Name</label>
+      <input
+        type="text"
+        id="planName"
+        class="form-control"
+        formControlName="planName"
+      />
+      <small
+        *ngIf="addProductFormGroup.get('planName')?.hasError('required') && addProductFormGroup.get('planName')?.touched"
+        class="text-danger"
+      >
+        Plan Name is required.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="planPrice">Plan Price</label>
+      <input
+        type="number"
+        id="planPrice"
+        class="form-control"
+        formControlName="planPrice"
+      />
+      <small
+        *ngIf="addProductFormGroup.get('planPrice')?.hasError('required') && addProductFormGroup.get('planPrice')?.touched"
+        class="text-danger"
+      >
+        Plan Price is required.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="planValidity">Plan Validity</label>
+      <input
+        type="text"
+        id="planValidity"
+        class="form-control"
+        formControlName="planValidity"
+      />
+      <small
+        *ngIf="addProductFormGroup.get('planValidity')?.hasError('required') && addProductFormGroup.get('planValidity')?.touched"
+        class="text-danger"
+      >
+        Plan Validity is required.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="planData">Plan Data</label>
+      <input
+        type="text"
+        id="planData"
+        class="form-control"
+        formControlName="planData"
+      />
+      <small
+        *ngIf="addProductFormGroup.get('planData')?.hasError('required') && addProductFormGroup.get('planData')?.touched"
+        class="text-danger"
+      >
+        Plan Data is required.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="planCategory">Plan Category</label>
+      <select
+        id="planCategory"
+        class="form-control"
+        formControlName="planCategory"
+      >
+        <option value="Wireline">WIRELINE</option>
+        <option value="Wireless">WIRELESS</option>
+      </select>
+      <small
+        *ngIf="addProductFormGroup.get('planCategory')?.hasError('required') && addProductFormGroup.get('planCategory')?.touched"
+        class="text-danger"
+      >
+        Plan Category is required.
+      </small>
+    </div>
+
+    
+<!-- Plan Locations -->
+<div class="form-group">
+  <label>Plan Location</label>
+  <div *ngFor="let location of this.locService.locations" class="form-check form-check-inline">
+    <input
+      type="checkbox"
+      class="form-check-input"
+      [id]="location.locId" 
+      [value]="location" 
+      formArrayName="planLocation"
+      (change)="onLocationChange($event, location)" 
+    />
+    <label class="form-check-label" [for]="location.locations">{{ location.locations }}</label> <!-- Use 'locations' for the label -->
+  </div>
+  <small
+    *ngIf="addProductFormGroup.get('planLocation')?.hasError('required') && addProductFormGroup.get('planLocation')?.touched"
+    class="text-danger"
+  >
+    Select at least one location.
+  </small>
+</div>
+
+
+
+<!-- Plan Subscriptions -->
+<div class="form-group">
+  <label>Plan Subscriptions</label>
+  <div *ngFor="let subscription of subsService.subscriptionsList" class="form-check form-check-inline">
+    <input
+      type="checkbox"
+      class="form-check-input"
+      [id]="subscription.subId"
+      [value]="subscription"
+      formArrayName="planSubscriptions"
+      (change)="onSubscriptionChange($event, subscription)"
+
+    />
+    <label class="form-check-label" [for]="subscription.subId">{{ subscription.subscriptionName }}</label>
+  </div>
+</div>
+
+
+    
+
+
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="addProductFormGroup.invalid"
+    >
+      Add Product
+    </button>
+
+    <!-- <div *ngFor="let choice of this.locService.locations; let i=index" class="col-md-2">
+      <label>
+        <input type="checkbox" [value]="choice" >
+        {{choice.locations}}
+      </label>
+    </div> -->
+  </form>
+</div>
+
+
+
+<!-- 
+<div class="login-box">
+    <h2>Add Product</h2>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <div class="user-box">
+        <input type="text" formControlName="planId">
+        <label>Plan ID</label>
+      </div>
+      <div class="user-box">
+        <input type="text" formControlName="planName">
+        <label>Plan Name</label>
+      </div>
+      <div class="user-box">
+        <input type="text" formControlName="planPrice">
+        <label>Plan Price</label>
+      </div>
+      <div class="user-box">
+        <input type="text" formControlName="planValidity">
+        <label>Plan Validity</label>
+      </div>
+      <div class="user-box">
+        <input type="text" formControlName="planData">
+        <label>Plan Data</label>
+      </div>
+      <div class="user-box">
+        <select formControlName="planCategory">
+          <option *ngFor="let category of planCategory" [value]="category">{{ category }}</option>
+        </select>
+        <label>Plan Category</label>
+      </div>
+      <div class="user-box">
+        <input type="text" formControlName="planSubscription">
+        <label>Plan Subscription</label>
+      </div>
+      <div class="user-box">
+        <select formControlName="planLocation">
+          <option *ngFor="let location of locationList" [value]="location">{{ location }}</option>
+        </select>
+        <label>Plan Location</label>
+      </div>
+      <button class="login-button" type="submit" [disabled]="productForm.invalid">Add Product</button>
+    </form>
+  </div>
+   -->

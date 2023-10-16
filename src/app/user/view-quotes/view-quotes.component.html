@@ -1,0 +1,48 @@
+<!-- <p>view-quotes works!</p> -->
+<!-- <h1>View Quotes for Plan ID: {{ planId }}</h1> -->
+<app-user-nav></app-user-nav>
+<div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Plan Name</th>
+          <th>Plan Price</th>
+          <th>Plan Validity</th>
+          <th>Plan Data</th>
+          <th>Plan Subscriptions</th>
+          <th>Location</th>
+          <!-- Add more table headers as needed -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let quote of quoteList" style="width: 50px;">
+          <td>{{ quote.planName }}</td>
+          <td>₹{{ quote.planPrice }}</td>
+          <td>{{ quote.planValidity }}</td>
+          <td>{{ quote.planData }}</td>
+          <td>
+            <ul *ngFor="let l of quote.planSubscriptions">
+              <li>{{ l.subscriptionName }}</li>
+            </ul>
+          </td>
+          <td>
+            <ul *ngFor="let l of quote.planLocations">
+              <li>{{ l.locations }}</li>
+            </ul>
+          </td>
+          <!-- <td><ul *ngFor="let l of quote.planSubscriptions"><li>{{l.subscriptionName}}</li></ul></td>
+          <td><ul *ngFor="let l of quote.planLocations"><li>{{l.locations}}</li></ul></td> -->
+
+          <!-- <td>{{ quote.planLocation }}</td> -->
+          <!-- Add more table cells as needed -->
+          
+        </tr>
+        
+      </tbody>
+    </table>
+    <tr>
+      <td colspan="5" style="text-align: right;"><strong>Total Quote:</strong></td>
+      <td><strong>₹{{ totalQuote }}</strong></td>
+    </tr>
+  </div>
+  

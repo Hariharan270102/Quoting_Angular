@@ -1,0 +1,43 @@
+<app-admin-nav></app-admin-nav>
+<p>admin-view-products works!</p>
+
+<button type="submit" routerLink="/edit_product" >Edit Product</button>
+<button type="submit" routerLink="/delete_product" >Delete Product</button>
+
+<div class="container">
+    <h2>Product Plans</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Plan ID</th>
+          <th>Plan Name</th>
+          <th>Plan Price</th>
+          <th>Plan Validity</th>
+          <th>Plan Data</th>
+          <th>Plan Category</th>
+          <th>Plan Available Locations</th>
+          <th>Actions</th> <!-- Add a new column for edit and delete buttons -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of this.uService.plans">
+          <td>{{ product.planId }}</td>
+          <td>{{ product.planName }}</td>
+          <td>{{ product.planPrice }}</td>
+          <td>{{ product.planValidity }}</td>
+          <td>{{ product.planData }}</td>
+          <td>{{ product.planCategory }}</td>
+          <td><i *ngFor="let loc of product.planLocations">
+            <ul>
+                <li>{{loc.locations}}</li>
+            </ul>
+          </i></td>
+          <td>
+            <button (click)="editProductPlan(product)">Edit</button> <!-- Call an edit function when clicked -->
+            <button (click)="deleteProductPlan(product)">Delete</button> <!-- Call a delete function when clicked -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

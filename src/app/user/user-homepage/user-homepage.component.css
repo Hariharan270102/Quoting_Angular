@@ -1,0 +1,264 @@
+
+.carousel {
+    margin-top: -12%;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+ul.slides {
+    display: block;
+    position: relative;
+    height: 600px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+ul.slides input {
+    display: none; 
+}
+
+
+.slide-container { 
+    display: block; 
+}
+
+.slide-image {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0;
+    transition: all .7s ease-in-out;
+}   
+
+.slide-image img {
+    width: auto;
+    min-width: 100%;
+    height: 100%;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    font-size: 100px;
+    line-height: 600px;
+    color: #fff;
+}
+
+.carousel-controls label {
+    display: none;
+    position: absolute;
+    padding: 0 20px;
+    opacity: 0;
+    transition: opacity .2s;
+    cursor: pointer;
+}
+
+.slide-image:hover + .carousel-controls label{
+    opacity: 0.5;
+}
+
+.carousel-controls label:hover {
+    opacity: 1;
+}
+
+.carousel-controls .prev-slide {
+    width: 49%;
+    text-align: left;
+    left: 0;
+}
+
+.carousel-controls .next-slide {
+    width: 49%;
+    text-align: right;
+    right: 0;
+}
+
+.carousel-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    z-index: 999;
+    text-align: center;
+}
+
+.carousel-dots .carousel-dot {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.5;
+    margin: 10px;
+}
+
+input:checked + .slide-container .slide-image {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .carousel-controls label {
+     display: block; 
+}
+
+input#img-1:checked ~ .carousel-dots label#img-dot-1,
+input#img-2:checked ~ .carousel-dots label#img-dot-2,
+input#img-3:checked ~ .carousel-dots label#img-dot-3,
+input#img-4:checked ~ .carousel-dots label#img-dot-4,
+input#img-5:checked ~ .carousel-dots label#img-dot-5,
+input#img-6:checked ~ .carousel-dots label#img-dot-6 {
+	opacity: 1;
+}
+
+
+input:checked + .slide-container .nav label { display: block; }
+
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+body{
+  background: #f9f9f9;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+}
+
+img {
+  background-color: rgba(16,46,72,0.6); 
+    background-blend-mode: multiply;
+}
+
+.container{
+  padding: 1rem;
+  float: left;
+}
+
+.content {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.content .content-overlay {
+  background: rgba(00,45,114,0.8);
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.content:hover .content-overlay{
+  opacity: 1;
+}
+
+.content-image{
+  width: 10000%;
+}
+
+.content-details {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 50%;
+}
+
+.content-details h3{
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+.arrow {
+  margin-left: 8px;
+}
+
+.content h3 {
+  display: inline-block;
+  position: relative;
+  transition: all 300ms ease-out;
+  will-change: transform;
+}
+
+.content:hover h3 {
+  -webkit-transform: translate3d(-1rem, 0, 0);
+          transform: translate3d(-1rem, 0, 0);
+}
+.content i {
+  position: absolute;
+  width: 1.1em;
+  right: -1.4rem;
+  opacity: 1;
+  top: 38%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  transition: all 300ms ease-out;
+  will-change: right, opacity;
+}
+
+.content:hover i {
+  opacity: 1;
+  right: -3rem;
+}
+
+
+
+/*
+.content-details h3 {
+  display: inline-block;
+  position: relative;
+  transition: all 300ms ease-out;
+  will-change: transform;
+}
+
+.content-details:hover h3 {
+  -webkit-transform: translate3d(-1rem, 0, 0);
+          transform: translate3d(-1rem, 0, 0);
+}
+.content-details i {
+  position: absolute;
+  width: 1.1em;
+  right: 0px;
+  right: 0rem;
+  opacity: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  transition: all 300ms ease-out;
+  will-change: right, opacity;
+}
+.content-details i * {
+  stroke-width: 5;
+  stroke-color: transparent;
+}
+.content-details:hover i {
+  opacity: 1;
+  right: -2rem;
+}
+*/

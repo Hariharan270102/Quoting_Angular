@@ -1,0 +1,276 @@
+<app-welcome></app-welcome>
+<br>
+<!-- {{myvalue}} -->
+<!-- {{user.firstname}} -->
+<div class="login-box">
+  <h2>Register</h2>
+  <form [formGroup]="registrationFormGroup" (ngSubmit)="onSubmit()">
+    <div class="user-box">
+      <input type="text" name="firstname"  formControlName="firstname" [class.is-invalid]="registrationFormGroup.controls['firstname'].invalid && registrationFormGroup.controls['firstname'].touched">
+      <label>Enter firstname</label>
+      <div *ngIf="registrationFormGroup.controls['firstname'].touched">
+        <div *ngIf="registrationFormGroup.controls['firstname'].invalid">
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['firstname'].errors?.['required']">Firstname can't be empty</small>
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['firstname'].errors?.['minlength']">Firstname should have a minimum of 3 characters and should contain only alphabets</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="user-box">
+      <input type="text" name="lastname" formControlName="lastname" [class.is-invalid]="registrationFormGroup.controls['lastname'].invalid && registrationFormGroup.controls['lastname'].touched">
+      <label>Enter lastname</label>
+      <div *ngIf="registrationFormGroup.controls['lastname'].touched">
+        <div *ngIf="registrationFormGroup.controls['lastname'].invalid">
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['lastname'].errors?.['required']">Lastname can't be empty</small>
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['lastname'].errors?.['minlength']">Lastname should have a minimum of 3 characters and should contain only alphabets</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="user-box">
+      <label>Select gender:</label>
+      <div class="gender-options">
+        <label>
+          <input type="radio" name="gender" value="male" formControlName="gender">
+          Male
+        </label>
+        <label>
+          <input type="radio" name="gender" value="female" formControlName="gender">
+          Female
+        </label>
+        <label>
+          <input type="radio" name="gender" value="prefer not to say" formControlName="gender">
+          Prefer not to say
+        </label>
+      </div>
+      <div *ngIf="registrationFormGroup.controls['gender'].touched">
+        <div *ngIf="registrationFormGroup.controls['gender'].invalid">
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['gender'].errors?.['required']">Please select a gender</small>
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['gender'].errors?.['invalidGender']">Invalid gender</small>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="user-box">
+      <input type="text" name="username" formControlName="username" [class.is-invalid]="registrationFormGroup.controls['username'].invalid && registrationFormGroup.controls['username'].touched">
+      <label>Enter username</label>
+      <div *ngIf="registrationFormGroup.controls['username'].touched">
+        <div *ngIf="registrationFormGroup.controls['username'].invalid">
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['username'].errors?.['required']">Username can't be empty</small>
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['username'].errors?.['pattern']">Username should have a minimum of 3 characters and should contain only Alphabets</small>
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['username'].errors?.['minlength']">Username should have a minimum of 3 characters and should contain only Alphabets</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="user-box">
+      <input type="password" name="password" formControlName="password" [class.is-invalid]="registrationFormGroup.controls['password'].invalid && registrationFormGroup.controls['password'].touched">
+      <label>Enter password</label>
+      <div *ngIf="registrationFormGroup.controls['password'].touched">
+        <div *ngIf="registrationFormGroup.controls['password'].invalid">
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['password'].errors?.['required']">Password can't be empty</small>
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['password'].errors?.['pattern']">Password should have a minimum of 8 characters</small>
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['password'].errors?.['minlength']">Password should have a minimum of 8 characters</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="user-box">
+      <input type="text" name="email" formControlName="email" [class.is-invalid]="registrationFormGroup.controls['email'].invalid && registrationFormGroup.controls['email'].touched">
+      <label>Enter email</label>
+      <div *ngIf="registrationFormGroup.controls['email'].touched">
+        <div *ngIf="registrationFormGroup.controls['email'].invalid">
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['email'].errors?.['required']">Email can't be empty</small>
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['email'].errors?.['pattern']">Enter a proper email id</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="user-box">
+      <input type="number" name="phoneNumber" formControlName="phoneNumber" [class.is-invalid]="registrationFormGroup.controls['phoneNumber'].invalid && registrationFormGroup.controls['phoneNumber'].touched">
+      <label>Enter phonenumber</label>
+      <div *ngIf="registrationFormGroup.controls['phoneNumber'].touched">
+        <div *ngIf="registrationFormGroup.controls['phoneNumber'].invalid">
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['phoneNumber'].errors?.['required']">Phonenumber can't be empty</small>
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['phoneNumber'].errors?.['pattern']">Phonenumber should have a maximum of 10 digits and should start with either 6, 7, 8, or 9 only</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="user-box">
+      <input type="text" name="address" formControlName="address" [class.is-invalid]="registrationFormGroup.controls['address'].invalid && registrationFormGroup.controls['address'].touched">
+      <label>Enter address</label>
+      <div *ngIf="registrationFormGroup.controls['address'].touched">
+        <div *ngIf="registrationFormGroup.controls['address'].invalid">
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['address'].errors?.['required']">Address can't be empty</small>
+        </div>
+      </div>
+    </div>
+<!-- 
+    <div class="user-box">
+      <input type="text" name="city" formControlName="city" [class.is-invalid]="registrationFormGroup.controls['city'].invalid && registrationFormGroup.controls['city'].touched">
+      <label>Enter city</label>
+      <div *ngIf="registrationFormGroup.controls['city'].touched">
+        <div *ngIf="registrationFormGroup.controls['city'].invalid">
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['city'].errors?.['required']">City can't be empty</small>
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['city'].errors?.['pattern']">City should contain only alphabets</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="user-box">
+      <input type="text" name="state" formControlName="state" [class.is-invalid]="registrationFormGroup.controls['state'].invalid && registrationFormGroup.controls['state'].touched">
+      <label>Enter state</label>
+      <div *ngIf="registrationFormGroup.controls['state'].touched">
+        <div *ngIf="registrationFormGroup.controls['state'].invalid">
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['state'].errors?.['required']">State can't be empty</small>
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['state'].errors?.['pattern']">State should contain only alphabets</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="user-box">
+      <input type="text" name="country" formControlName="country" [class.is-invalid]="registrationFormGroup.controls['country'].invalid && registrationFormGroup.controls['country'].touched">
+      <label>Enter country</label>
+      <div *ngIf="registrationFormGroup.controls['country'].touched">
+        <div *ngIf="registrationFormGroup.controls['country'].invalid">
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['country'].errors?.['required']">Country can't be empty</small>
+          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['country'].errors?.['pattern']">Country should contain only alphabets</small>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="user-box">
+      
+      <label for="inputState" style="color: #03e9f4;font-size: 12px;margin-top: -10px;">Select state</label>
+      <br><br>
+    <select class="form-control" id="inputState" name="stateSelection" formControlName="selectedState"  id="stateselect" [class.is-invalid]="registrationFormGroup.controls['selectedState'].invalid && registrationFormGroup.controls['selectedState'].touched" (change)="onStateChange()">
+                        <option value="SelectState">Select State</option>
+                        <option value="Andra Pradesh">Andra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madya Pradesh">Madya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Orissa">Orissa</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttaranchal">Uttaranchal</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="West Bengal">West Bengal</option>
+                        <option disabled style="background-color:#aaa; color:#fff">UNION Territories</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                        <option value="Daman and Diu">Daman and Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Lakshadeep">Lakshadeep</option>
+                        <option value="Pondicherry">Pondicherry</option>
+                      </select>
+                      <div *ngIf="registrationFormGroup.controls['selectedState'].touched">
+                        <div *ngIf="registrationFormGroup.controls['selectedState'].invalid">
+                          <small style="color: crimson;" *ngIf="registrationFormGroup.controls['selectedState'].errors?.['required']">Please select your state</small>
+                          <!-- <small style="color: crimson;" *ngIf="registrationFormGroup.controls['selectedState'].errors?.['pattern']">Country should contain only alphabets</small> -->
+                        </div>
+                      </div>
+      
+    </div>
+  <!-- select district starts here -->
+    <div class="user-box">
+      <label for="inputDistrict" style="color: #03e9f4;font-size: 12px;">Select district</label>
+      <br><br>
+    <select class="form-control" id="inputDistrict" formControlName="selectedDistrict" [class.is-invalid]="registrationFormGroup.controls['selectedDistrict'].invalid && registrationFormGroup.controls['selectedDistrict'].touched">
+        <option value="">-- select one -- </option>
+        <option *ngFor="let district of districts" [value]="district">{{ district }}</option>
+    </select>
+    
+    <div *ngIf="registrationFormGroup.controls['selectedDistrict'].touched">
+      <div *ngIf="registrationFormGroup.controls['selectedDistrict'].invalid">
+        <small style="color: crimson;" *ngIf="registrationFormGroup.controls['selectedDistrict'].errors?.['required']">Please select your district</small>
+        <!-- <small style="color: crimson;" *ngIf="registrationFormGroup.controls['selectedState'].errors?.['pattern']">Country should contain only alphabets</small> -->
+      </div>
+    </div>
+      
+    </div>
+      <!-- select district ends here -->
+
+    <button class="login-button" type="submit"  [disabled]="registrationFormGroup.invalid" >Register</button>
+    <button class="login-button" type="button" routerLink="/login">Existing user?</button>
+  </form>
+</div>
+
+
+
+
+<!-- {{selectedState}} -->
+<!-- <form>
+  <div class="form-group col-md-4">
+    <label for="inputState">State</label>
+    <select class="form-control" id="inputState" name="stateSelection"[(ngModel)]="selectedState" (change)="onStateChange()">
+                        <option value="SelectState">Select State</option>
+                        <option value="Andra Pradesh">Andra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madya Pradesh">Madya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Orissa">Orissa</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttaranchal">Uttaranchal</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="West Bengal">West Bengal</option>
+                        <option disabled style="background-color:#aaa; color:#fff">UNION Territories</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                        <option value="Daman and Diu">Daman and Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Lakshadeep">Lakshadeep</option>
+                        <option value="Pondicherry">Pondicherry</option>
+                      </select>
+  </div>
+  <div class="form-group col-md-4">
+    <label for="inputDistrict">District</label>
+    <select class="form-control" id="inputDistrict" >
+        <option value="">-- select one -- </option>
+        <option *ngFor="let district of districts" [value]="district">{{ district }}</option>
+    </select>
+  </div>
+
+</form>
+ -->
