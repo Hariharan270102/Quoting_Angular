@@ -10,12 +10,18 @@ import { LocationService } from 'src/app/location.service';
 })
 export class UserNavComponent {
   constructor(private uService:UserService,private route:Router,private locService:LocationService){}
+  userEmail:any=localStorage.getItem("userEmail")
 
   startQuote(){
     console.log('ihekfjvhr')
     this.uService.getProductPlans()
     this.locService.getLocations()
     this.route.navigate(['/view_products'])
+  }
+  viewQuoting(){
+    this.uService.getQuoteDb(this.userEmail)
+    this.route.navigate(['/view_quotes'])
+
   }
 
 }

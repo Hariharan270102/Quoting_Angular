@@ -23,7 +23,7 @@
           <li class="active"><a class="section-scroll" routerLink="/user_homepage">Home</a></li>
           <li><a (click)="startQuote()">Start Quoting</a></li>
           <li><a routerLink="/search_products">Search Products</a></li>
-          <li><a routerLink="/view_quotes">View Quoting</a></li>
+          <li><a (click)="viewQuoting()">View Quoting</a></li>
           <li><a routerLink="/logout">Logout</a></li>
           <!-- <li>
             <a *ngIf="!isLoggedIn()" (click)="login()" routerLink="/login">Login</a>

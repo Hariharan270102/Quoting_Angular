@@ -16,6 +16,9 @@ import { AdminRoutingModule } from './admin/admin-routing.module';
 import { GeneralService } from './general.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { SendOtpComponent } from './send-otp/send-otp.component';
+
 
 
 
@@ -26,6 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
     HomepageComponent,
     LoginComponent,
     RegisterComponent,
+    ForgotPasswordComponent,
+    SendOtpComponent,
+
   
   ],
   imports: [

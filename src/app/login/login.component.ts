@@ -34,19 +34,39 @@ export class LoginComponent {
   )
  loginSubmit() {
   
-    // this.loginService.getCredentials(this.logingrp.get('username')?.value).subscribe(
-    //   data=>{this.obj=data; 
-    //   console.log(data);
-    //   console.log(this.obj)
-    //   localStorage.setItem("userLocation",this.obj.state)
-    //   localStorage.setItem("userData",this.obj)
-    //   }
-    // );
-    // console.log("login details"+this.obj);
+    this.loginService.getCredentials(this.logingrp.get('username')?.value).subscribe(
+      data=>{this.obj=data;
+      console.log("data");
+         
+      console.log(data);
+      console.log("this.obj");
+      
+      console.log(this.obj)
+      //setting values in local storage
+      localStorage.setItem("userLocation",this.obj.state)
+      localStorage.setItem("userEmail",this.obj.email)
+      localStorage.setItem("userPhonenumber",this.obj.phonenumber)
+      localStorage.setItem("userData",this.obj)
+
+
+      //printing values from local storage
+      console.log(localStorage.getItem('userLocation')); // This will print the string representation of the object
+      console.log(localStorage.getItem('userEmail'));    
+      console.log(localStorage.getItem('userPhonenumber'));    
+      console.log(localStorage.getItem('userData'))
+ 
+ 
+       
+
+      }
+    );
+    console.log("login details"+this.obj);
     
   if (this.logingrp.valid) {
     const username = this.logingrp.get('username')?.value;
     const password = this.logingrp.get('password')?.value;
+
+
 
     // Check if email and password match admin credentials
     if (username === 'admin@gmail.com' && password === 'reset@123') {

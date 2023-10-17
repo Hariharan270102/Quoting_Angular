@@ -2,8 +2,8 @@
 <!-- Add this HTML structure for side-by-side dropdowns -->
 <app-user-nav></app-user-nav>
 <br>
-{{selectedLocation|json}}
-{{selectedCategory|json}}
+<!-- {{selectedLocation|json}}
+{{selectedCategory|json}} -->
 <div class="dropdown-container">
   <div class="dropdown-wrapper">
     <select class="ag-filter-dropdown" [(ngModel)]="selectedLocation" (change)="setLocationAndCategory(selectedLocation,selectedCategory)">
@@ -75,6 +75,8 @@
     </div>
 
 </div>
+
+
 
 
 

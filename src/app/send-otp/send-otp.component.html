@@ -1,0 +1,17 @@
+<app-welcome></app-welcome>
+
+<body>
+
+    <div class="login-box">
+      <h2>ENTER OTP</h2>
+      <form  (ngSubmit)="checkOtp()" >
+        <div class="user-box">
+          <input type="text"  name="otp" [(ngModel)]="otp"  style="margin-top: 20px;">
+          <label style="margin-top: 10px;">Enter your otp</label>
+        </div>
+      
+        <button class="login-button" type="submit"  style="padding: 20px;margin-left: 70px;">SUBMIT</button>
+
+      </form>
+    </div>
+</body>

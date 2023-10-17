@@ -6,6 +6,8 @@ import { UserService } from '../user.service';
 import { ProductPlansResponse } from 'src/app/product-model/product-plans-response-pojo';
 import { LocationService } from 'src/app/location.service';
 import Swal from 'sweetalert2';
+import { ViewQuote } from 'src/app/modules/view-quote';
+
 
 @Component({
   selector: 'app-view-products',
@@ -51,20 +53,57 @@ export class ViewProductsComponent {
   selectedCategory=''
   
 
+
   addToGenerateQuote(product:ProductPlansResponse){
-    console.log(product)
-    console.log(this.uService.addToQuote(product))
+    console.log("from local storage trying to get email of user");
+    const userEmail=localStorage.getItem("userEmail");
+    const userPhonenumber=localStorage.getItem("userPhonenumber");  
+    console.log(userEmail);
+    console.log(userPhonenumber);
+      
+  // Check if the required values are present
+  if (userEmail && userPhonenumber) {
+// Assuming product is of type ProductPlansResponse
+    const subs: string[] = product.planSubscriptions.map((item: { subscriptionName: string }) => item.subscriptionName);
+    const locs: string[] = product.planLocations.map((item: { locations: string }) => item.locations);
+
+    // Create a ViewQuote object with the values from local storage and the product parameter
+    const viewQuote = new ViewQuote(
+      userEmail,
+      userPhonenumber,
+      product.planId,
+      product.planName,
+      product.planPrice,
+      product.planData,
+      product.planValidity,
+      product.planCategory,
+      subs,
+      locs
+    );
+
+    this.uService.viewQuoteDb(viewQuote)
+
+    // Log the created ViewQuote object
+    console.log("from view quote object");
+    
+    console.log(viewQuote);
+
+    // for(let i of viewQuote.planLocation){
+    //   console.log(i.locations);
+      
+    // }
+    // console.log(product)
+    // console.log(this.uService.addToQuote(product))
     Swal.fire("Great plan! ")
     console.log("selected location"+this.selectedCategory);
     console.log("selected category"+this.selectedLocation);
     
-    
-
-
   }
 
   
 
+
+}
 
 }
 

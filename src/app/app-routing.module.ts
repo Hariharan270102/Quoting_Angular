@@ -10,6 +10,8 @@ import { ViewQuotesComponent } from './user/view-quotes/view-quotes.component';
 import { SearchProductComponent } from './user/search-product/search-product.component';
 import { AdminModule } from './admin/admin.module';
 import { UserModule } from './user/user.module';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { SendOtpComponent } from './send-otp/send-otp.component';
 
 
 const routes: Routes = [
@@ -22,6 +24,8 @@ const routes: Routes = [
   {path:'admin_homepage',component:AdminHomepageComponent},
   {path:'view_products',component:ViewProductsComponent},
   {path:'view_quotes',component:ViewQuotesComponent},
+  {path:'forgot_password',component:ForgotPasswordComponent},
+  {path:'send_otp',component:SendOtpComponent},
   // {path:'add_product',component:AddProductComponent},
 
   // {path:'admin_add_products',component:AddProductComponent},

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProductPlans } from 'src/app/product-model/product-plan-pojo';
 import { UserService } from '../user.service';
 import { ProductPlansResponse } from 'src/app/product-model/product-plans-response-pojo';
+import { ViewQuote } from 'src/app/modules/view-quote';
 
 @Component({
   selector: 'app-view-quotes',
@@ -15,7 +16,7 @@ export class ViewQuotesComponent  implements OnInit{
   constructor(public router:Router,
     private route:ActivatedRoute,private uService:UserService){}
 
-  quoteList:ProductPlansResponse[]=[]
+  quoteList:ViewQuote[]=[]
 
   // ngOnInit() {
     
@@ -29,12 +30,16 @@ export class ViewQuotesComponent  implements OnInit{
 
   // }
   ngOnInit() {
-    this.route.params.subscribe((params) => {
-      this.planId = params['planId'];
-      this.loadQuotesByPlanId(this.planId);
+    const userEmail:any=localStorage.getItem("userEmail")
+    this.uService.getQuoteDb(userEmail).subscribe((response: ViewQuote[]) => {
+      console.log(response);
+      this.quoteList = response; // Assign the retrieved quotes
+      this.calculateTotalQuote(); // Calculate the total quote
     });
 
-    this.calculateTotalQuote();
+    this.route.params.subscribe((params) => {
+      this.planId = params['planId'];
+    });
   }
 
 

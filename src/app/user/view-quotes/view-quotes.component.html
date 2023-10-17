@@ -21,13 +21,13 @@
           <td>{{ quote.planValidity }}</td>
           <td>{{ quote.planData }}</td>
           <td>
-            <ul *ngFor="let l of quote.planSubscriptions">
-              <li>{{ l.subscriptionName }}</li>
+            <ul *ngFor="let l of quote.planSubscription">
+              <li>{{ l }}</li>
             </ul>
           </td>
           <td>
             <ul *ngFor="let l of quote.planLocations">
-              <li>{{ l.locations }}</li>
+              <li>{{ l }}</li>
             </ul>
           </td>
           <!-- <td><ul *ngFor="let l of quote.planSubscriptions"><li>{{l.subscriptionName}}</li></ul></td>
