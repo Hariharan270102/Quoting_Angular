@@ -78,7 +78,8 @@ export class ViewProductsComponent {
       product.planValidity,
       product.planCategory,
       subs,
-      locs
+      locs,
+      1
     );
 
     this.uService.viewQuoteDb(viewQuote)

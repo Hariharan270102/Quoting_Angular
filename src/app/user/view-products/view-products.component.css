@@ -283,3 +283,33 @@ button {
 button:hover {
   background: #0056b3;
 }
+.ag-courses_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust the minmax value as per your design */
+  gap: 20px; /* Adjust the gap between cards */
+}
+.ag-courses_item {
+  display: flex; /* Display the card content in a row */
+  flex-direction: column; /* Set the content layout to a column */
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.ag-courses_item_title ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: left; /* Align list items to the left */
+}
+
+.ag-courses_item_title li {
+  margin-bottom: 10px;
+}
+
+.ag-courses_item_date-box {
+  margin-top: auto; /* Push the date box to the bottom of the card */
+}

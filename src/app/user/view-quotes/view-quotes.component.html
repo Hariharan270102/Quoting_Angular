@@ -11,6 +11,8 @@
           <th>Plan Data</th>
           <th>Plan Subscriptions</th>
           <th>Location</th>
+          <th>Quantity</th>
+          <th>Actions</th>
           <!-- Add more table headers as needed -->
         </tr>
       </thead>
@@ -30,6 +32,10 @@
               <li>{{ l }}</li>
             </ul>
           </td>
+          <td>{{quote.quantity}}</td>
+          <td><button type="submit" (click)="removePlanQuantityFromQuoteList(quote)">Remove</button></td>
+          <td><button type="submit" (click)="deletePlanFromQuoteList(quote)">Delete</button></td>
+
           <!-- <td><ul *ngFor="let l of quote.planSubscriptions"><li>{{l.subscriptionName}}</li></ul></td>
           <td><ul *ngFor="let l of quote.planLocations"><li>{{l.locations}}</li></ul></td> -->
 
@@ -39,10 +45,16 @@
         </tr>
         
       </tbody>
+      
     </table>
     <tr>
-      <td colspan="5" style="text-align: right;"><strong>Total Quote:</strong></td>
+      <td colspan="4" style="text-align: right;" ><strong>Total Quantity:</strong></td>
+      <td><strong>{{ getTotalQuantity() }}</strong></td>
+    </tr>
+    <tr>
+      <td colspan="6" style="text-align: right;"><strong>Total Quote:</strong></td>
       <td><strong>₹{{ totalQuote }}</strong></td>
     </tr>
+    
   </div>
   

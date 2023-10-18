@@ -78,48 +78,37 @@ export class UserService {
 
     getQuoteDb(userEmail:string):Observable<ViewQuote[]>{
       console.log("from get quote db");
-      console.log(userEmail);
-//       const apiUrl = `${this.quote_url}?userEmail=${userEmail}`;
-// console.log("API URL:", apiUrl);
-
-// this.http.get<ViewQuote[]>(apiUrl).subscribe(
-//   (response: ViewQuote[]) => {
-//     // Success handling
-//     console.log("success");
-    
-//   },
-//   (error) => {
-//     console.error("HTTP request error:", error);
-//   }
-// );
-
-      
+      console.log(userEmail);   
       return this.http.get<ViewQuote[]>(`${this.quote_url}?userEmail=${userEmail}`)
-      
 
     }
 
+    removePlanQuantityFromQuote(quote:ViewQuote){
+      return this.http.put(this.quote_url,quote)
 
-  // getProducts(){
-  //   return this.planList;
-  // }
-  
-  // getProduct(planName: string): ProductPlans[] {
-  //   // Use a Set to store unique search results
-  //   const uniqueResults = new Set<ProductPlans>();
-  
-  //   for (const plan of this.planList) {
-  //     if (plan.planName === planName) {
-  //       uniqueResults.add(plan);
-  //     }
-  //   }
-  
-  //   // Convert the Set back to an array
-  //   const planSearch: ProductPlans[] = [...uniqueResults];
-  
-  //   return planSearch;
-  // }
+    }
 
+    deletePlanFromQuote(quote:ViewQuote){
+      const planId=quote.planId;
+      const userEmail=quote.userEmail
+      return this.http.delete(this.quote_url+"?planId="+planId+"&userEmail="+userEmail)
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//not used anywhere
 getQuotesByPlanId(planId: string): ProductPlans[] {
   // Implement the logic to fetch quotes based on planId
   // For example, filter the quotes array to get quotes with the matching planId
@@ -134,7 +123,6 @@ addToQuote(product:ProductPlansResponse):string{
 getQuote(){
   return this.quoteList
 }
-
 
 
 }
