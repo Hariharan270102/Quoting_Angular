@@ -12,6 +12,7 @@ import { AdminModule } from './admin/admin.module';
 import { UserModule } from './user/user.module';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { SendOtpComponent } from './send-otp/send-otp.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path:'view_quotes',component:ViewQuotesComponent},
   {path:'forgot_password',component:ForgotPasswordComponent},
   {path:'send_otp',component:SendOtpComponent},
+  {path:'change_password',component:ChangePasswordComponent},
   // {path:'add_product',component:AddProductComponent},
 
   // {path:'admin_add_products',component:AddProductComponent},

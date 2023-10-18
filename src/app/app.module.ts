@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { SendOtpComponent } from './send-otp/send-otp.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 
 
@@ -31,6 +32,7 @@ import { SendOtpComponent } from './send-otp/send-otp.component';
     RegisterComponent,
     ForgotPasswordComponent,
     SendOtpComponent,
+    ChangePasswordComponent,
 
   
   ],

@@ -23,10 +23,11 @@ export class LoginService {
     
   }
   emailMessage:EmailMessage|undefined;
+  eMsgReturn:any;
   sendOtp(to:string,subject:string,message:string){
     console.log("from send otp service");
 
-    this.emailMessage = new EmailMessage(to,subject,message)
+    this.emailMessage = new EmailMessage(to,subject,message,1)
     
     console.log(to);
     console.log(subject);
@@ -35,10 +36,26 @@ export class LoginService {
     
     console.log(this.emailMessage);
     
-    return this.http.post(this.url_email,this.emailMessage).subscribe()
+    return this.http.post(this.url_email,this.emailMessage)
+    .subscribe((response)=>{
+      console.log(response);
+      this.eMsgReturn=response
+    })
+    
+  }
+
+  changePassword(password:any){
+    console.log("change pwd");
+    console.log(this.eMsgReturn);
     
     
-    
+    const changeUserCredentials = {
+
+      'user_email':this.eMsgReturn.to,
+      'password':password
+  
+    }
+    return this.http.put(this.url,changeUserCredentials)
 
   }
 

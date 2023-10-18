@@ -14,7 +14,7 @@ import { timer } from 'rxjs';
 export class ForgotPasswordComponent {
   obj:any;
   username:any;
-  umail:any
+  umail:any;
   constructor(public router:Router,public uService:UserService,public lService:LoginService){}
 
   forgotPasswordGrp=new FormGroup({
