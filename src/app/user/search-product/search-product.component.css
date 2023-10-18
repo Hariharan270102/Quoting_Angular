@@ -1,162 +1,211 @@
 .ag-format-container {
-    width: 1142px;
-    margin: 0 auto;
-  }
-  
-  
-  body {
-    background-color: #000;
-  }
-  .ag-courses_box {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-  
-    padding: 50px 0;
-  }
+  width: 1142px;
+  margin: 0 auto;
+}
+
+
+body {
+  background-color: #000;
+}
+.ag-courses_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  padding: 50px 0;
+}
+.ag-courses_item {
+  -ms-flex-preferred-size: calc(33.33333% - 30px);
+  flex-basis: calc(33.33333% - 30px);
+
+  margin: 0 15px 30px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+}
+.ag-courses-item_link {
+  display: block;
+  padding: 30px 20px;
+  background-color: #121212;
+
+  overflow: hidden;
+
+  position: relative;
+}
+.ag-courses-item_link:hover,
+.ag-courses-item_link:hover .ag-courses-item_date {
+  text-decoration: none;
+  color: #FFF;
+}
+.ag-courses-item_link:hover .ag-courses-item_bg {
+  -webkit-transform: scale(10);
+  -ms-transform: scale(10);
+  transform: scale(10);
+}
+.ag-courses-item_title {
+  min-height: 87px;
+  margin: 0 0 25px;
+
+  overflow: hidden;
+
+  font-weight: bold;
+  font-size: 30px;
+  color: #FFF;
+
+  z-index: 2;
+  position: relative;
+}
+.ag-courses-item_date-box {
+  font-size: 18px;
+  color: #FFF;
+
+  z-index: 2;
+  position: relative;
+}
+.ag-courses-item_date {
+  font-weight: bold;
+  color: #f9b234;
+
+  -webkit-transition: color .5s ease;
+  -o-transition: color .5s ease;
+  transition: color .5s ease
+}
+.ag-courses-item_bg {
+  height: 128px;
+  width: 128px;
+  background-color: #c4bcaf;
+
+  z-index: 1;
+  position: absolute;
+  top: -75px;
+  right: -75px;
+
+  border-radius: 50%;
+
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+.ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+  background-color: #3ecd5e;
+}
+.ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+  background-color: #e44002;
+}
+.ag-courses_item:nth-child(4n) .ag-courses-item_bg {
+  background-color: #952aff;
+}
+.ag-courses_item:nth-child(5n) .ag-courses-item_bg {
+  background-color: #cd3e94;
+}
+.ag-courses_item:nth-child(6n) .ag-courses-item_bg {
+  background-color: #4c49ea;
+}
+
+
+
+@media only screen and (max-width: 979px) {
   .ag-courses_item {
-    -ms-flex-preferred-size: calc(33.33333% - 30px);
-    flex-basis: calc(33.33333% - 30px);
-  
-    margin: 0 15px 30px;
-  
-    overflow: hidden;
-  
-    border-radius: 28px;
-  }
-  .ag-courses-item_link {
-    display: block;
-    padding: 30px 20px;
-    background-color: #121212;
-  
-    overflow: hidden;
-  
-    position: relative;
-  }
-  .ag-courses-item_link:hover,
-  .ag-courses-item_link:hover .ag-courses-item_date {
-    text-decoration: none;
-    color: #FFF;
-  }
-  .ag-courses-item_link:hover .ag-courses-item_bg {
-    -webkit-transform: scale(10);
-    -ms-transform: scale(10);
-    transform: scale(10);
+    -ms-flex-preferred-size: calc(50% - 30px);
+    flex-basis: calc(50% - 30px);
   }
   .ag-courses-item_title {
-    min-height: 87px;
-    margin: 0 0 25px;
-  
-    overflow: hidden;
-  
-    font-weight: bold;
-    font-size: 30px;
-    color: #FFF;
-  
-    z-index: 2;
-    position: relative;
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ag-format-container {
+    width: 96%;
+  }
+
+}
+@media only screen and (max-width: 639px) {
+  .ag-courses_item {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+  }
+  .ag-courses-item_title {
+    min-height: 72px;
+    line-height: 1;
+
+    font-size: 24px;
+  }
+  .ag-courses-item_link {
+    padding: 22px 40px;
   }
   .ag-courses-item_date-box {
-    font-size: 18px;
-    color: #FFF;
-  
-    z-index: 2;
-    position: relative;
+    font-size: 16px;
   }
-  .ag-courses-item_date {
-    font-weight: bold;
-    color: #f9b234;
-  
-    -webkit-transition: color .5s ease;
-    -o-transition: color .5s ease;
-    transition: color .5s ease
-  }
-  .ag-courses-item_bg {
-    height: 128px;
-    width: 128px;
-    background-color: #c4bcaf;
-  
-    z-index: 1;
-    position: absolute;
-    top: -75px;
-    right: -75px;
-  
-    border-radius: 50%;
-  
-    -webkit-transition: all .5s ease;
-    -o-transition: all .5s ease;
-    transition: all .5s ease;
-  }
-  .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
-    background-color: #3ecd5e;
-  }
-  .ag-courses_item:nth-child(3n) .ag-courses-item_bg {
-    background-color: #e44002;
-  }
-  .ag-courses_item:nth-child(4n) .ag-courses-item_bg {
-    background-color: #952aff;
-  }
-  .ag-courses_item:nth-child(5n) .ag-courses-item_bg {
-    background-color: #cd3e94;
-  }
-  .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
-    background-color: #4c49ea;
-  }
-  
-  
-  
-  @media only screen and (max-width: 979px) {
-    .ag-courses_item {
-      -ms-flex-preferred-size: calc(50% - 30px);
-      flex-basis: calc(50% - 30px);
-    }
-    .ag-courses-item_title {
-      font-size: 24px;
-    }
-  }
-  
-  @media only screen and (max-width: 767px) {
-    .ag-format-container {
-      width: 96%;
-    }
-  
-  }
-  @media only screen and (max-width: 639px) {
-    .ag-courses_item {
-      -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-    }
-    .ag-courses-item_title {
-      min-height: 72px;
-      line-height: 1;
-  
-      font-size: 24px;
-    }
-    .ag-courses-item_link {
-      padding: 22px 40px;
-    }
-    .ag-courses-item_date-box {
-      font-size: 16px;
-    }
-  }
-  /* CSS for card zoom effect */
+}
+/* CSS for card zoom effect */
 .ag-courses_item {
-    transition: transform 0.2s; /* Add smooth transition on transform */
-  }
-  
-  .ag-courses_item:hover {
-    transform: scale(1.05); /* Scale the card to 105% on hover */
-  }
-  
+  transition: transform 0.2s; /* Add smooth transition on transform */
+}
+
+.ag-courses_item:hover {
+  transform: scale(1.05); /* Scale the card to 105% on hover */
+}
+
 /* search-product.component.css */
 
 /* Styles for the search bar container */
 .search-container {
+max-width: 800px;
+margin: 0 auto;
+padding: 20px;
+text-align: center;
+background-color: transparent;
+transition: background-color 0.3s ease-in-out;
+}
+
+/* Apply styles when the search bar is active (searchQuery not empty) */
+.searched {
+background-color: #000;
+}
+
+/* Styles for the search input */
+.search-input {
+padding: 10px;
+width: 70%;
+border: none;
+border-radius: 5px;
+outline: none;
+font-size: 16px;
+background-color: #f2f2f2;
+color: #333;
+}
+
+/* Styles for the search button */
+.search-button {
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+outline: none;
+font-size: 16px;
+background-color: #007bff; /* Blue color for the button */
+color: #fff;
+cursor: pointer;
+transition: background-color 0.3s ease-in-out;
+}
+
+/* Apply styles when hovering over the search button */
+.search-button:hover {
+background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Rest of your styles */
+
+/* view-quotes.component.css */
+
+/* Styles for the dropdown container */
+.dropdown-container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
@@ -165,41 +214,182 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-/* Apply styles when the search bar is active (searchQuery not empty) */
-.searched {
+/* Apply styles when the dropdown is active (selectedLocation or selectedCategory is not empty) */
+.dropdown-active {
   background-color: #000;
 }
 
-/* Styles for the search input */
-.search-input {
-  padding: 10px;
-  width: 70%;
+/* Styles for the dropdown select elements */
+.ag-filter-dropdown {
+  font-size: 18px;
+  padding: 15px;
+  width: 100%;
   border: none;
   border-radius: 5px;
   outline: none;
   font-size: 16px;
   background-color: #f2f2f2;
   color: #333;
+  margin-right: 10px;
 }
 
-/* Styles for the search button */
-.search-button {
-  padding: 10px 20px;
-  border: none;
+/* Rest of your styles for view-quotes.component */
+/* Apply styles for the dropdown wrapper to make them side by side */
+.dropdown-wrapper {
+  display: inline-block; /* Display them inline */
+  margin-right: 10px; /* Add some spacing between them */
+}
+
+/* Rest of your existing CSS styles for dropdowns and container */
+
+
+/* CSS for the 3x3 grid layout */
+.ag-format-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
+  gap: 20px; /* Adjust the gap between items */
+}
+
+.ag-courses_item {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 20px;
   border-radius: 5px;
-  outline: none;
-  font-size: 16px;
-  background-color: #007bff; /* Blue color for the button */
+}
+
+.ag-courses_item_title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.ag-courses-item_link {
+  text-decoration: none;
+  color: #333;
+}
+
+.ag-courses-item_date-box {
+  margin-top: 10px;
+}
+
+button {
+  background: #007bff;
   color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
 }
 
-/* Apply styles when hovering over the search button */
-.search-button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+button:hover {
+  background: #0056b3;
+}
+.ag-courses_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust the minmax value as per your design */
+  gap: 20px; /* Adjust the gap between cards */
+}
+.ag-courses_item {
+  display: flex; /* Display the card content in a row */
+  flex-direction: column; /* Set the content layout to a column */
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-/* Rest of your styles */
+.ag-courses_item_title ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: left; /* Align list items to the left */
+}
 
-  
+.ag-courses_item_title li {
+  margin-bottom: 10px;
+}
+
+.ag-courses_item_date-box {
+  margin-top: auto; /* Push the date box to the bottom of the card */
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.card {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 24px;
+  margin: 0;
+  color: #333;
+}
+
+.plan-details {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.card-description {
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.plan-details b {
+  color: #007BFF;
+}
+
+.card-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.card-button:hover {
+  background-color: #0056b3;
+}
+
+.subscription-list,
+.location-list {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.subscription-list li,
+.location-list li {
+  font-weight: bold;
+}

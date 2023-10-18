@@ -313,3 +313,83 @@ button:hover {
 .ag-courses_item_date-box {
   margin-top: auto; /* Push the date box to the bottom of the card */
 }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.card {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 24px;
+  margin: 0;
+  color: #333;
+}
+
+.plan-details {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.card-description {
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.plan-details b {
+  color: #007BFF;
+}
+
+.card-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.card-button:hover {
+  background-color: #0056b3;
+}
+
+.subscription-list,
+.location-list {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.subscription-list li,
+.location-list li {
+  font-weight: bold;
+}

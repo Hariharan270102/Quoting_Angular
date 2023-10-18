@@ -228,6 +228,85 @@ img {
 }
 
 
+/* Reset default margin and padding */
+body, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling for the header */
+header {
+  text-align: center;
+  background-color: #007BFF;
+  color: #fff;
+  padding: 40px;
+}
+
+/* Styling for the carousel */
+.carousel-container {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  animation: slide 12s infinite linear;
+}
+
+.carousel-slide {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+  transition: 1s;
+  position: relative;
+}
+
+.carousel-slide img {
+  max-width: 100%;
+  height: auto;
+}
+
+.slide-content {
+  text-align: center;
+}
+
+/* Keyframes animation for the carousel */
+@keyframes slide {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(0); }
+  25%, 45% { transform: translateX(-100%); }
+  50% { transform: translateX(-100%); }
+  55%, 75% { transform: translateX(-200%); }
+  100% { transform: translateX(-200%); }
+}
+
+/* Styling for features section */
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.feature {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Styling for the footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #007BFF;
+  color: #fff;
+}
+
+/* Add animations and other styles as needed */
+
+
 
 /*
 .content-details h3 {

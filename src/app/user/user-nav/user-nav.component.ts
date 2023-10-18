@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { LocationService } from 'src/app/location.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user-nav',
@@ -22,6 +23,26 @@ export class UserNavComponent {
     this.uService.getQuoteDb(this.userEmail)
     this.route.navigate(['/view_quotes'])
 
+  }
+  logout(){
+    Swal.fire({
+      title: "Logout",
+      text: "Are you sure you want to log out?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Yes, log out",
+      cancelButtonText: "Cancel",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Perform logout action here
+        // You can redirect to a logout page or trigger a logout function
+        Swal.fire("Logged Out", "You have been logged out.", "success").then(()=>{ 
+          this.route.navigate(['/logout']);
+         
+      })
+      }
+    }); 
+  
   }
 
 }
