@@ -8,7 +8,8 @@ export class ViewQuote{
                 public planValidity:string,
                 public planCategory:string,
                 public planSubscription:any[],
-                public planLocations:any[]
+                public planLocations:any[],
+                public quantity:number
                 ){
 
     }

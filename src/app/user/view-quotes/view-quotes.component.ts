@@ -43,11 +43,22 @@ export class ViewQuotesComponent  implements OnInit{
   }
 
 
-  loadQuotesByPlanId(planId: string) {
-    this.quoteList = this.uService.getQuote();
-  }
 
   calculateTotalQuote() {
-    this.totalQuote = this.quoteList.reduce((total, quote) => total + quote.planPrice, 0);
+    this.totalQuote = this.quoteList.reduce((total, quote) => {
+      return total + quote.planPrice * quote.quantity;
+    }, 0);
+  }
+
+  getTotalQuantity(): number {
+    return this.quoteList.reduce((total, quote) => total + quote.quantity, 0);
+  }
+  
+  removePlanQuantityFromQuoteList(quote:ViewQuote){
+    this.uService.removePlanQuantityFromQuote(quote).subscribe()
+  }
+  deletePlanFromQuoteList(quote:ViewQuote){
+    this.uService.deletePlanFromQuote(quote).subscribe()
+
   }
 }
