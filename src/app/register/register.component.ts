@@ -3,6 +3,8 @@ import { FormControl, FormGroup, Validators} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserRegister } from '../modules/userRegister';
 import { UserRegisterService } from '../user-register.service';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 
 
@@ -650,7 +652,7 @@ export class RegisterComponent {
   }
 
 
-  constructor(public userRegister:UserRegisterService){}
+  constructor(public userRegister:UserRegisterService, private router:Router){}
 
   // Create the registration form group with custom validator for gender
   registrationFormGroup = new FormGroup({
@@ -667,6 +669,7 @@ export class RegisterComponent {
     selectedState:new FormControl('',[Validators.required]),
     selectedDistrict:new FormControl('',[Validators.required])
   });
+  r:Boolean=false;
 
   onSubmit() {
     // Check if the form is valid before accessing the values
@@ -691,9 +694,30 @@ export class RegisterComponent {
         // formValues.state,
         // formValues.country
       );
-
       console.log(userRegister)
-       this.userRegister.registerUserDb(userRegister);
+      this.userRegister.registerUserDb(userRegister).subscribe(
+          res =>{
+            this.r = res
+            console.log(res)
+            if(this.r === true){
+              Swal.fire({
+                title: 'Registration Successful',
+                text: 'You have successfully registered!',
+                icon: 'success',
+              }).then(()=>{this.router.navigate(["/login"])});
+            }
+            else{
+              Swal.fire({
+                icon: 'error',
+                title: 'Registration Failed',
+                text: 'The email address is already registered or there was an issue with your registration.',
+              }).then(()=>{this.router.navigate(["/login"])})
+            }
+          } 
+      )
+
+      
+
 
     }
   }
