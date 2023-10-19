@@ -13,6 +13,7 @@ import { UserModule } from './user/user.module';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { SendOtpComponent } from './send-otp/send-otp.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { MyAccountComponent } from './user/my-account/my-account.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path:'forgot_password',component:ForgotPasswordComponent},
   {path:'send_otp',component:SendOtpComponent},
   {path:'change_password',component:ChangePasswordComponent},
+  {path:'my_account',component:MyAccountComponent},
   // {path:'add_product',component:AddProductComponent},
 
   // {path:'admin_add_products',component:AddProductComponent},

@@ -1,15 +1,14 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { LoginService } from 'src/app/login.service';
-import { WelcomeComponent } from 'src/app/nav-bar/welcome.component';
-
-
 
 @Component({
-  selector: 'app-user-homepage',
-  templateUrl: './user-homepage.component.html',
-  styleUrls: ['./user-homepage.component.css']
+  selector: 'app-my-account',
+  templateUrl: './my-account.component.html',
+  styleUrls: ['./my-account.component.css']
 })
-export class UserHomepageComponent {
+export class MyAccountComponent {
+
   userDetails:any;
   userEmail:any
   userPhonenumber:any;
@@ -27,5 +26,7 @@ export class UserHomepageComponent {
     })
 
   }
+
+
 
 }

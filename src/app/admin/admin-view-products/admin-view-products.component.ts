@@ -39,8 +39,8 @@ export class AdminViewProductsComponent {
     localStorage.setItem("edit_planSubscriptions",this.editProduct.planSubscriptions)
     localStorage.setItem("edit_planLocations",this.editProduct.planLocations)
 
-    this.check=JSON.parse(localStorage.getItem("product")+'').planId
-    console.log(this.check);
+    // this.check=JSON.parse(localStorage.getItem("product")+'').planId
+    // console.log(this.check);
     
     
 

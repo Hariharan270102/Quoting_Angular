@@ -80,7 +80,11 @@ export class LoginComponent {
             // Username exists, check if the password matches
             if (data.password === password) {
               // Password matches, login successful
-              Swal.fire('Login Successful', '', 'success');
+              Swal.fire({
+                icon: 'success',
+                title: 'Login Successful',
+                text: 'You have successfully logged in!',
+              })
               // You can store user data in localStorage here if needed
               // Redirect to the user homepage
               this.router.navigate(['/user_homepage']);

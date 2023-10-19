@@ -44,5 +44,9 @@ export class UserNavComponent {
     }); 
   
   }
+  myAccount(){
+    this.route.navigate(["/my_account"])
+
+  }
 
 }

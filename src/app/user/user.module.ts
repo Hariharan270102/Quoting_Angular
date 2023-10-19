@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { FilterLocationPipe } from './pipe/filter-location.pipe';
 import { CategoryFilterPipe } from './pipe/category-filter.pipe';
 import { WelcomeComponent } from '../nav-bar/welcome.component';
+import { MyAccountComponent } from './my-account/my-account.component';
 
 
 
@@ -25,6 +26,7 @@ import { WelcomeComponent } from '../nav-bar/welcome.component';
     ViewProductsComponent,
     FilterLocationPipe,
     CategoryFilterPipe,
+    MyAccountComponent,
     
     
   ],

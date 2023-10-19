@@ -15,6 +15,7 @@
           <th>Plan Validity</th>
           <th>Plan Data</th>
           <th>Plan Category</th>
+          <th>Plan Subscriptions</th>
           <th>Plan Available Locations</th>
           <th>Actions</th> <!-- Add a new column for edit and delete buttons -->
         </tr>
@@ -27,6 +28,11 @@
           <td>{{ product.planValidity }}</td>
           <td>{{ product.planData }}</td>
           <td>{{ product.planCategory }}</td>
+          <td><i *ngFor="let sub of product.planSubscriptions">
+            <ul>
+                <li>{{sub.subscriptionName}}</li>
+            </ul>
+          </i></td>
           <td><i *ngFor="let loc of product.planLocations">
             <ul>
                 <li>{{loc.locations}}</li>
