@@ -1,60 +1,67 @@
 <!-- <p>view-quotes works!</p> -->
 <!-- <h1>View Quotes for Plan ID: {{ planId }}</h1> -->
 <app-user-nav></app-user-nav>
-<div class="table-container">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Plan Name</th>
-          <th>Plan Price</th>
-          <th>Plan Validity</th>
-          <th>Plan Data</th>
-          <th>Plan Subscriptions</th>
-          <th>Location</th>
-          <th>Quantity</th>
-          <th>Actions</th>
-          <!-- Add more table headers as needed -->
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let quote of quoteList" style="width: 50px;">
-          <td>{{ quote.planName }}</td>
-          <td>₹{{ quote.planPrice }}</td>
-          <td>{{ quote.planValidity }}</td>
-          <td>{{ quote.planData }}</td>
-          <td>
-            <ul *ngFor="let l of quote.planSubscription">
-              <li>{{ l }}</li>
-            </ul>
-          </td>
-          <td>
-            <ul *ngFor="let l of quote.planLocations">
-              <li>{{ l }}</li>
-            </ul>
-          </td>
-          <td>{{quote.quantity}}</td>
-          <td><button type="submit" (click)="removePlanQuantityFromQuoteList(quote)">Remove</button></td>
-          <td><button type="submit" (click)="deletePlanFromQuoteList(quote)">Delete</button></td>
-
-          <!-- <td><ul *ngFor="let l of quote.planSubscriptions"><li>{{l.subscriptionName}}</li></ul></td>
-          <td><ul *ngFor="let l of quote.planLocations"><li>{{l.locations}}</li></ul></td> -->
-
-          <!-- <td>{{ quote.planLocation }}</td> -->
-          <!-- Add more table cells as needed -->
-          
-        </tr>
+<div class="container">
+  <h2>VIEW QUOTES</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Plan Name</th>
+        <th>Plan Price</th>
+        <th>Plan Validity</th>
+        <th>Plan Data</th>
+        <th>Plan Subscriptions</th>
+        <th>Location</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+        <!-- Add more table headers as needed -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let quote of quoteList">
+        <td>{{ quote.planName }}</td>
+        <td>₹{{ quote.planPrice }}</td>
+        <td>{{ quote.planValidity }}</td>
+        <td>{{ quote.planData }}</td>
+        <td>
+          <ul *ngFor="let l of quote.planSubscription">
+            <li>{{ l }}</li>
+          </ul>
+        </td>
+        <td>
+          <ul *ngFor="let l of quote.planLocations">
+            <li>{{ l }}</li>
+          </ul>
+        </td>
+        <td>{{ quote.quantity }}</td>
+        <td>
+          <div class="button-container">
+            <button type="submit" (click)="removePlanQuantityFromQuoteList(quote)">Remove</button>
+            <button type="submit" (click)="deletePlanFromQuoteList(quote)">Delete</button>
+          </div>
+        </td>
         
-      </tbody>
-      
-    </table>
-    <tr>
-      <td colspan="4" style="text-align: right;" ><strong>Total Quantity:</strong></td>
-      <td><strong>{{ getTotalQuantity() }}</strong></td>
-    </tr>
-    <tr>
-      <td colspan="6" style="text-align: right;"><strong>Total Quote:</strong></td>
-      <td><strong>₹{{ totalQuote }}</strong></td>
-    </tr>
-    
+        <!-- Add more table cells as needed -->
+      </tr>
+    </tbody>
+  </table>
+  <div class="summary">
+    <div>
+      <strong>Total Quantity:</strong>
+    </div>
+    <div>
+      <strong>{{ getTotalQuantity() }}</strong>
+    </div>
+    <div>
+      <strong>Total Quote:</strong>
+    </div>
+    <div>
+      <strong>₹{{ totalQuote }}</strong>
+    </div>
+    <a href="http://localhost:5052/generate-excel?user_mail={{this.mail}}">Download Excel Invoice</a>
+    <!-- <div>
+      <button type="submit" (click)="downloadExcel()">Download Excel Invoice</button>
+
+    </div> -->
   </div>
-  
+</div>

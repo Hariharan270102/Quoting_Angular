@@ -1,46 +1,261 @@
-/* view-quotes.component.css */
+.container {
+  max-width: 800px; /* Increase the max width */
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-/* Style for the table container */
-.table-container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Style for the table */
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #121212;
-    color: #fff;
-  }
-  
-  /* Style for table headers */
-  .table th {
-    background-color: #343a40;
-    color: #fff;
-    padding: 10px;
-    text-align: left;
-  }
-  
-  /* Style for table rows */
-  .table tbody tr:nth-child(even) {
-    background-color: #1a1a1a;
-  }
-  
-  /* Style for table cells (td) */
-  .table td {
-    padding: 10px;
-  }
-  
-  /* Style for table cells (td) with currency */
-  .table td.currency {
-    font-weight: bold;
-    color: #f9b234;
-  }
-  
-  /* Style for table hover effect */
-  .table tbody tr:hover {
-    background-color: #343a40;
-  }
-  
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+/* Apply table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: left;
+}
+
+/* Header row style */
+table thead {
+  background-color: #007bff;
+  color: #fff;
+}
+
+table th {
+  font-weight: bold;
+}
+
+/* Alternate row colors for better readability */
+table tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+/* Hover effect on table rows */
+table tbody tr:hover {
+  background-color: #d9d9d9;
+}
+
+/* Add styles for the edit and delete buttons */
+table tbody tr td button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 5px;
+}
+
+table tbody tr td button:hover {
+  background-color: #0056b3;
+}
+
+/* Style the delete button with a different color */
+table tbody tr td button.delete {
+  background-color: #dc3545;
+}
+
+table tbody tr td button.delete:hover {
+  background-color: #a91d30;
+}
+
+.container {
+
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+/* Apply table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  overflow: auto; /* Add overflow property to enable horizontal scrolling */
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: left;
+}
+
+/* Header row style */
+table thead {
+  background-color: #007bff;
+  color: #fff;
+}
+
+table th {
+  font-weight: bold;
+}
+
+/* Alternate row colors for better readability */
+table tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+/* Hover effect on table rows */
+table tbody tr:hover {
+  background-color: #d9d9d9;
+}
+
+/* Add styles for the edit and delete buttons */
+table tbody tr td button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 5px;
+}
+
+table tbody tr td button:hover {
+  background-color: #0056b3;
+}
+
+/* Style the delete button with a different color */
+table tbody tr td button.delete {
+  background-color: #dc3545;
+}
+
+table tbody tr td button.delete:hover {
+  background-color: #a91d30;
+}
+
+/* Adjust the table layout */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  overflow: auto; /* Enable horizontal scrolling if necessary */
+}
+
+/* Style the "Actions" column header */
+table th:last-child {
+  text-align: center;
+  white-space: nowrap;
+  width: 1%;
+}
+
+/* Style the "Remove" and "Delete" buttons */
+table tbody tr td button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 5px;
+}
+
+table tbody tr td button:hover {
+  background-color: #0056b3;
+}
+
+/* Style the delete button with a different color */
+table tbody tr td button.delete {
+  background-color: #dc3545;
+}
+
+table tbody tr td button.delete:hover {
+  background-color: #a91d30;
+}
+
+/* Adjust the summary section layout */
+.summary {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Adjust the font style for total quantity and total quote */
+.summary strong {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Adjust the "Remove" and "Delete" buttons */
+table tbody tr td button {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 5px; /* Add space between buttons */
+}
+
+table tbody tr td button:hover {
+  background-color: #0056b3;
+}
+
+/* Style the delete button with a different color */
+table tbody tr td button.delete {
+  background-color: #dc3545;
+}
+
+table tbody tr td button.delete:hover {
+  background-color: #a91d30;
+}
+
+/* Add a container for the buttons and adjust the "Remove" and "Delete" buttons */
+table tbody tr td .button-container {
+  display: flex;
+  gap: 5px; /* Adjust the spacing between buttons */
+}
+
+table tbody tr td .button-container button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+table tbody tr td .button-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Style the delete button with a different color */
+table tbody tr td .button-container button.delete {
+  background-color: #dc3545;
+}
+
+table tbody tr td .button-container button.delete:hover {
+  background-color: #a91d30;
+}

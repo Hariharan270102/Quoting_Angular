@@ -55,24 +55,9 @@ export class LoginService {
       'password':password
   
     }
-    return this.http.put(this.url,changeUserCredentials)
+    return this.http.put<Boolean>(this.url,changeUserCredentials)
 
   }
-
- // getCredentials(credentials:any){
-  //   console.log("from login service");
-    
-  //   return this.http.get<LoginCredentials>(this.url+'?credentials='+credentials).subscribe((response:LoginCredentials)=>{
-  //   console.log(response)
-  //   },
-  //   (error)=>{
-  //     console.log("Error"+error);
-  //   }
-      
-  //   )
-    
-  // }
-
   
 
 }

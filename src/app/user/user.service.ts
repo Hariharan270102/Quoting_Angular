@@ -6,7 +6,7 @@ import { productCategory } from '../product-model/product-plan-list';
 import { HttpClient } from '@angular/common/http';
 import { ProductPlansResponse } from '../product-model/product-plans-response-pojo';
 import { ViewQuote } from '../modules/view-quote';
-import { Observable } from 'rxjs';
+import { Observable, catchError, tap } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,6 +14,9 @@ export class UserService {
   url="http://localhost:5051/productplan"
 
   quote_url="http://localhost:5052/view-quote"
+
+  excel_url="http://localhost:5052/generate-excel"
+
 
   plans:ProductPlansResponse[]=[]
   planList:ProductPlans[]=productPlanList;
@@ -93,18 +96,6 @@ export class UserService {
       const userEmail=quote.userEmail
       return this.http.delete(this.quote_url+"?planId="+planId+"&userEmail="+userEmail)
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

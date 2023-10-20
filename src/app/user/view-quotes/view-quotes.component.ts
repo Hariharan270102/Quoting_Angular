@@ -13,22 +13,21 @@ import { ViewQuote } from 'src/app/modules/view-quote';
 export class ViewQuotesComponent  implements OnInit{
   totalQuote=0
   planId:string=''
+  mail:any
+  excelDownloadUrl:any
+
+
   constructor(public router:Router,
-    private route:ActivatedRoute,private uService:UserService){}
+    private route:ActivatedRoute,private uService:UserService){
+      this.mail=localStorage.getItem("userEmail");
+      console.log("from constructor");
+      console.log(this.mail);
+      
+      
+    }
 
   quoteList:ViewQuote[]=[]
 
-  // ngOnInit() {
-    
-  //   this.route.params.subscribe((params)=>{this.planId=params['planId'];
-  //   console.log("Received planId:",this.planId)
-  //   this.loadQuotesByPlanId(this.planId);
-
-  //   // this.quoteList = this.uService.getQuotesByPlanId(this.planId);
-
-  // });
-
-  // }
   ngOnInit() {
     const userEmail:any=localStorage.getItem("userEmail")
     this.uService.getQuoteDb(userEmail).subscribe((response: ViewQuote[]) => {
@@ -61,4 +60,6 @@ export class ViewQuotesComponent  implements OnInit{
     this.uService.deletePlanFromQuote(quote).subscribe()
 
   }
+
+  
 }
