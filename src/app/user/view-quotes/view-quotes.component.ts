@@ -4,6 +4,7 @@ import { ProductPlans } from 'src/app/product-model/product-plan-pojo';
 import { UserService } from '../user.service';
 import { ProductPlansResponse } from 'src/app/product-model/product-plans-response-pojo';
 import { ViewQuote } from 'src/app/modules/view-quote';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-view-quotes',
@@ -55,9 +56,12 @@ export class ViewQuotesComponent  implements OnInit{
   
   removePlanQuantityFromQuoteList(quote:ViewQuote){
     this.uService.removePlanQuantityFromQuote(quote).subscribe()
+    Swal.fire("Removed Successfully").then(()=>{ window.location.reload()})
   }
   deletePlanFromQuoteList(quote:ViewQuote){
     this.uService.deletePlanFromQuote(quote).subscribe()
+    Swal.fire("Deleted Successfully").then(()=>{ window.location.reload()})
+
 
   }
 

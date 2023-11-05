@@ -34,6 +34,9 @@ export class ViewProductsComponent {
   constructor(public router:Router,
     private route:ActivatedRoute,
     public uService:UserService,public locService:LocationService){
+      console.log(this.selectedLocation)
+
+      this.setLocationAndCategory(this.selectedLocation,'any')
    
   }
 
@@ -43,10 +46,6 @@ export class ViewProductsComponent {
     this.uService.getProductPlansByLocationAndCategory(location,category)
   }
 
-  // setLocationAndCategory(location:any,category:any){
-  //   console.log("setLocationAndcategory"+location+" "+category)
-  // }
-  
 
   planCategory=this.uService.productCategory
   selectedLocation: any = localStorage.getItem("userLocation"); 

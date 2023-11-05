@@ -63,12 +63,10 @@ export class UserService {
   
   getProductPlansByLocationAndCategory(selectedLocation: any, selectedCategory: any) {
     console.log(typeof selectedCategory);
-    if(selectedCategory===''){
-      selectedCategory='NULL';
-    }
     this.http.get<ProductPlansResponse[]>(this.url + '/location_category?selectedLocation=' + selectedLocation + '&selectedCategory=' + selectedCategory).subscribe((response: ProductPlansResponse[]) => {
       this.ProductPlansByLocationAndCategory=response
         console.log(this.ProductPlansByLocationAndCategory);
+        console.log(response)
     });
 }
 

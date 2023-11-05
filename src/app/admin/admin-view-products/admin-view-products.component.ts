@@ -47,9 +47,22 @@ export class AdminViewProductsComponent {
     this.router.navigate(["/edit_product"])
 
   }
-  deleteProductPlan(planId:string){
-    this.adminService.deleteProduct(planId)
-    Swal.fire("product deleted successfully");
+  
+  deleteProductPlan(planId: string) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You are about to delete this product. Do you want to proceed?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, cancel',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.adminService.deleteProduct(planId); // Delete the product if confirmed
+        window.location.reload();
+      }
+    });
   }
+  
 
 }
