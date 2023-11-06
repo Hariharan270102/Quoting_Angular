@@ -1,7 +1,7 @@
 <app-user-nav></app-user-nav>
 <!-- {{searchQuery|json}} -->
 <div class="search-container">
-  <form (ngSubmit)="searchProduct()">
+  <form (ngSubmit)="onSearch()">
     <input type="search" placeholder="Enter product to search" name="search_product" [(ngModel)]="searchQuery" class="search-input"
     />
     &nbsp;
@@ -11,24 +11,24 @@
 
 
 <div class="card-grid">
-  <div class="card" *ngFor="let product of this.searchList">
+  <div class="card" *ngFor="let product of products">
     <img src="https://th.bing.com/th/id/OIP.eETs5g3A7vUEqJxlI0NctAHaDt?w=303&h=175&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Card Image">
-    <div class="card-content">
+    <div class="card-content" style="height: 370px;">
       <h2 class="card-title">{{ product.planName }}</h2>
       <p class="card-description"><b>{{product.planValidity}}</b></p><br>
       <p class="card-description"><b>{{product.planData}}</b></p><br>
       <!-- <p class="card-description"><b>{{product.planValidity}}</b></p> -->
       <p style="color: rgb(192, 29, 46);">Subsciptions included with this plan</p><br> <div *ngFor="let i of product.planSubscriptions">
-        <ul><li><b>{{i.subscriptionName}}</b></li></ul>
+        <ul ><li><b>{{i.subscriptionName}}</b></li></ul>
         
       </div>
-      <p style="color: rgb(192, 29, 46);">Plans available in locations </p> <br><div *ngFor="let i of product.planLocations">
+      <!-- <p style="color: rgb(192, 29, 46);">Plans available in locations </p> <br><div *ngFor="let i of product.planLocations">
         <ul><li><b>{{i.locations}}</b></li></ul>
-      </div>
-      <h3 class="card-title"><b>₹{{ product.planPrice }}</b></h3>
-
-      
+      </div> -->
+      <div class="dow-container" style="position: absolute;bottom: 0px;margin-bottom: 2rem;">
+        <h3 class="card-title"><b>₹{{ product.planPrice }}</b></h3>
       <a  class="card-button" (click)="addToGenerateQuote(product)">Generate Quote</a>
+      </div>
     </div>
   </div>
 </div>

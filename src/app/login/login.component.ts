@@ -69,11 +69,12 @@ export class LoginComponent {
 
 
     // Check if email and password match admin credentials
-    if (username === 'admin@gmail.com' && password === 'reset@123') {
+    if (username === 'admin@prodapt.com' && password === 'reset@123') {
       // Redirect to admin homepage
       this.router.navigate(['/admin_homepage']);
     } else {
       // Make a call to your service to check if the username exists
+      // this.loginService.checkCredentials(username,password).subscribe((result)=>{console.log(result);})
       this.loginService.getCredentials(username).subscribe(
         (data: LoginCredentials) => {
           if (data) {

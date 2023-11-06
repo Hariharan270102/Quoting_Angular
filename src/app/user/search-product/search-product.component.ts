@@ -14,12 +14,23 @@ import Swal from 'sweetalert2';
 export class SearchProductComponent {
   searchQuery: string = '';
   searchList:ProductPlansResponse[]=[]
+  products:any;
   constructor(public uService:UserService,
               public router:Router){
                 uService.getProductPlans()
     
 
   }
+  onSearch()
+  {
+   
+     const flag=this.uService.searchProduct(this.searchQuery).subscribe((result)=>{this.products=result});
+     
+     if(!flag)
+     console.log('unable to process the request');
+ 
+  } 
+  //not used using onSearch() instead of the below method
   searchProduct(){
     console.log('Search Query:', this.searchQuery);
     this.searchList = this.uService.searchProductPlan(this.searchQuery)

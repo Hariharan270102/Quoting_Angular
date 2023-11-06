@@ -12,9 +12,18 @@ export class LoginService {
   constructor(private http:HttpClient) { }
 
   url="http://localhost:5050/registerUser"
+  check_url="http://localhost:5050/registerUser/check"
+
 
   url_email="http://localhost:5678/send-email"
 
+  //testing not used anywhere as now
+  // checkCredentials(username:any,password:any):Observable<Boolean>{
+  //   console.log("from check credentials method");
+  //   return this.http.get<Boolean>(this.check_url+'?username='+username+'?password='+password,{responseType:'json'});
+    
+
+  // }
  
   getCredentials(credentials:any):Observable<LoginCredentials>{
     console.log("from login service");

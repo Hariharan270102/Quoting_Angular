@@ -36,3 +36,155 @@
   button:hover, a:hover {
     opacity: 0.7;
   }
+
+  .card {
+    background-color: #f2f2f2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+  }
+  
+  .card-header img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  p {
+    color: #666;
+    font-size: 16px;
+    margin: 8px 0;
+  }
+  
+  .social-icons a {
+    text-decoration: none;
+    font-size: 28px;
+    color: #333;
+    margin: 10px;
+  }
+  
+  .fa-icon:hover {
+    color: #007bff;
+  }
+  
+  .contact-button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 12px 24px;
+    color: white;
+    background-color: #007bff;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+  
+  .contact-button:hover {
+    background-color: #0056b3;
+    opacity: 0.9;
+  }
+
+  .small-card {
+  background-color: #f2f2f2;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 250px; /* Reduce the maximum width */
+  margin: auto;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+}
+
+.card-header img {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  padding: 10px; /* Adjust padding */
+}
+
+.card-title {
+  font-size: 18px; /* Reduce font size */
+  font-weight: bold;
+  margin-bottom: 8px; /* Adjust margin */
+  color: #333;
+}
+
+p {
+  color: #666;
+  font-size: 14px; /* Reduce font size */
+  margin: 6px 0; /* Adjust margin */
+}
+
+.social-icons a {
+  text-decoration: none;
+  font-size: 20px; /* Reduce font size */
+  color: #333;
+  margin: 6px; /* Adjust margin */
+}
+
+.fa-icon:hover {
+  color: #007bff;
+}
+
+.contact-button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 20px; /* Adjust padding */
+  color: white;
+  background-color: #007bff;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px; /* Reduce font size */
+  border-radius: 5px;
+}
+
+.contact-button:hover {
+  background-color: #0056b3;
+  opacity: 0.9;
+}
+.small-card {
+  background-color: #f2f2f2;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 320px; /* Slightly increase the maximum width */
+  margin: auto;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+}
+
+.card-header img {
+  width: 100%;
+  max-height: 150px; /* Decrease the max-height of the image */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* The rest of the CSS remains the same as the previous example */
+
+  

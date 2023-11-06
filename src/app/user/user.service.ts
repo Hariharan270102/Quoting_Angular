@@ -28,7 +28,13 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
 
+  searchProduct(productItem:string)
+  {
+    return this.http.get(`${this.url}/search-product/${productItem}`);
+  }
+  //not used using searchProduct() instead of the below method
   searchProductPlan(planName: string){
+
 
     const uniqueResults = new Set<ProductPlansResponse>();
   

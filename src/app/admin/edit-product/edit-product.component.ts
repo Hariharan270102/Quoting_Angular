@@ -61,7 +61,7 @@ export class EditProductComponent {
     planId: new FormControl(this.editProduct.planId, [Validators.required, Validators.pattern(/^[A-Z0-9@#$%^&*()_+|~=`{}[\]:";'<>?,./]{1,}$/)]),
     planName: new FormControl(this.editProduct.planName, [Validators.required]),
     planPrice: new FormControl(this.editProduct.planPrice, [Validators.required]),
-    planValidity: new FormControl(this.editProduct.planPrice, [Validators.required]),
+    planValidity: new FormControl(this.editProduct.planValidity, [Validators.required]),
     planData: new FormControl(this.editProduct.planData, [Validators.required]),
     planCategory: new FormControl(this.editProduct.planCategory, [Validators.required]),
     planLocation: new FormArray([],[Validators.required]), // Use FormArray
