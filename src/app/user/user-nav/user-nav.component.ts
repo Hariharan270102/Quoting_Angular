@@ -38,7 +38,7 @@ export class UserNavComponent {
         // You can redirect to a logout page or trigger a logout function
         Swal.fire("Logged Out", "You have been logged out.", "success").then(()=>{ 
           this.route.navigate(['/logout']);
-         
+ 
       })
       }
     }); 
