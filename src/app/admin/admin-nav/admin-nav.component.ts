@@ -27,7 +27,7 @@ export class AdminNavComponent {
       if (result.isConfirmed) {
         Swal.fire("Logged Out", "You have been logged out.", "success").then(()=>{ 
           this.route.navigate(['/logout']);
-         
+          
       })
       }
     }); 

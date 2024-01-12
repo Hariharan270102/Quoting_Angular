@@ -11,6 +11,6 @@ new ProductPlans('AIR_BP3','Basic Plan',499,'58 days','1.5Gb/day','WIRELESS',['H
 
 export let locations:string[]=['Chennai','Mumbai','Kolkata']
 
-export let productCategory:string[]=['WIRELINE','WIRELESS']
+export let productCategory:string[]=['ALL','WIRELINE','WIRELESS']
 
 export let productSubscriptions:string[]=['Hotstar','Amazonprime','Zee5','Netflix']
